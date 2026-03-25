@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  sdp-webhook-receiver:
+    build: .
+    container_name: sdp_webhook_receiver
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      # Sets the timezone to IST to match the log timestamps
+      - TZ=Asia/Calcutta
